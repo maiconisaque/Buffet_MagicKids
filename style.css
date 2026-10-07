@@ -1,0 +1,162 @@
+
+:root{
+    --laranja: #FF9736;
+    --verde:#7ED321;
+    --preto:#222222;
+}
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #F5F0E5;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 50px;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6 );
+}
+.header .logo img{
+    height: 50px;
+    width: auto;
+}
+.header .menu ul{
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+.header .menu ul li a{
+    font-family: 'Varela Round', sans-serif;
+    text-decoration: none;
+    color: var(--preto);
+    padding: 8px 16px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+.header .menu ul li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--laranja);
+    transition: width 0.25s ease;
+}
+.header .menu ul li a:hover{
+    background-color: var(--laranja);
+    color: #fff;
+    border-radius: 20px;
+}
+main{
+    padding-top: 90px;
+}
+.hero{
+    text-align: center;
+    padding: 80px 20px;
+}
+.hero-stats{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 56px;
+    padding: 80px;
+    border-top: 1px solid #e0d8c8
+}
+.stat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stat-numero{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--laranja);
+}
+.stat-label{
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: #666;
+}
+.hero h1{
+    font-size: 2.8rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--preto);
+}
+.hero p{
+    margin-top: 12px;
+    font-size: 1.1rem;
+    font-family: 'Varela Round', sans-serif;
+    color: #555;
+
+}
+.btn-cta{
+    display: inline-block;
+    margin-top: 24px;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: var(--laranja);
+    padding: 14px 36px;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+.btn-cta:hover{
+    background-color: var(--verde);
+    transform: translateY(-3px);
+}
+.sobre{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.sobre-text{
+    flex: 1;
+}
+.sobre-text h2{
+    font-size: 2rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--laranja);
+}
+.sobre-text p{
+    margin-top: 16px;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+}
+.sobre-img{
+    flex: 1;
+}
+.sobre-imagem img{
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+}
+.redes-sociais{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+.redes-sociais img{
+    width: 20px;
+    height: 20px;
+    transition: transform 0.25s ease;
+}
+.redes-sociais img:hover{
+    transform: scale(1.15);
+}
