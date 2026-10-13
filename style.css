@@ -13,6 +13,7 @@ body{
     font-family: 'Poppins', sans-serif;
     color: #333;
     background-color: #F5F0E5;
+    position: relative;
 }
 .header{
     display: flex;
@@ -20,20 +21,30 @@ body{
     justify-content: space-between;
     height: 80px;
     padding: 0 50px;
-    background-color: #fff;
+    background-color: #FFE3CC;
     width: 100%;
     position: fixed;
     top: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6 );
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08 );
+    z-index: 1000;
+}
+.header::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--laranja), var(--verde))
 }
 .header .logo img{
-    height: 50px;
+    height: 85px;
     width: auto;
 }
 .header .menu ul{
     display: flex;
     list-style: none;
-    gap: 24px;
+    gap: 8px;
 }
 .header .menu ul li a{
     font-family: 'Varela Round', sans-serif;
@@ -70,7 +81,7 @@ main{
     justify-content: center;
     gap: 60px;
     margin-top: 56px;
-    padding: 80px;
+    padding: 40px 80px;
     border-top: 1px solid #e0d8c8
 }
 .stat{
@@ -159,4 +170,235 @@ main{
 }
 .redes-sociais img:hover{
     transform: scale(1.15);
+}
+.bolhas{
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+.bolhas span{
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: bolha 6s ease-in-out infinite;
+}
+.bolhas span:nth-child(odd){ background: var(--laranja); }
+.bolhas span:nth-child(even){ background: var(--verde); }
+
+.bolhas span:nth-child(1){ left: 5%;  top: 25%; width: 40px; height: 40px; }
+.bolhas span:nth-child(2){ left: 20%; top: 70%; width: 24px; height: 24px; animation-delay: 1s; }
+.bolhas span:nth-child(3){ left: 35%; top: 40%; width: 56px; height: 56px; animation-delay: 2s; }
+.bolhas span:nth-child(4){ left: 50%; top: 80%; width: 30px; height: 30px; animation-delay: 0.5s; }
+.bolhas span:nth-child(5){ left: 65%; top: 30%; width: 44px; height: 44px; animation-delay: 1.5s; }
+.bolhas span:nth-child(6){ left: 78%; top: 65%; width: 28px; height: 28px; animation-delay: 2.5s; }
+.bolhas span:nth-child(7){ left: 90%; top: 35%; width: 52px; height: 52px; animation-delay: 3s; }
+.bolhas span:nth-child(8){ left: 12%; top: 50%; width: 20px; height: 20px; animation-delay: 3.5s; }
+
+@keyframes bolha{
+    0%, 100%{ transform: translateY(0); }
+    50%{ transform: translateY(-40px); }
+}
+.sobre-texto p + p{
+    margin-top: 12px;
+}
+.diferenciais{
+    list-style: none;
+    margin-top: 24px;
+}
+.diferenciais li{
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+    color: #444;
+}
+.diferenciais li::before{
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--verde);
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 22px;
+}
+.galeria{
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.galeria h2{
+    font-size: 2rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--laranja);
+}
+.galeria-intro{
+    margin-top: 12px;
+    color: #555;
+}
+.galeria-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+}
+.galeria-card{
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.galeria-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+.galeria-card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.galeria-card h3{
+    font-size: 1.2rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--preto);
+    margin-top: 16px;
+    padding: 0 16px;
+}
+.galeria-card p{
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    padding: 8px 16px 20px;
+}
+.header .menu ul li a.ativo{
+    background-color: var(--verde);
+    color: #fff;
+    border-radius: 20px;
+}
+.cardapio{
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.cardapio h2{
+    font-size: 2rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--laranja);
+}
+.cardapio-intro{
+    margin-top: 12px;
+    color: #555;
+}
+.cardapio-lista{
+    display:flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 40px;
+}
+.cardapio-item{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+.cardapio-item.invertido{
+    flex-direction: row-reverse;
+}
+.cardapio-item img{
+    width: 45%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.cardapio-info{
+    flex: 1;
+}
+.cardapio-info h3{
+    font-size: 1.6rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--laranja);
+}
+.cardapio-item.invertido .cardapio-info h3{
+    color: var(--verde);
+}
+.cardapio-info ul{
+    list-style: none;
+    margin-top: 16px;
+}
+.cardapio-info li{
+    padding: 10px 0;
+    color: #555;
+    border-bottom: 1px dashed #e0d8c8;
+}
+.cardapio-info li:last-child{
+    border-bottom: none;
+}
+.espaco{
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.espaco h2{
+    font-size: 2rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--laranja);
+}
+.espaco-intro{
+    margin-top: 12px;
+    color: #555;
+}
+.espaco-lista{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 40px;
+}
+.espaco-item{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+.espaco-item.invertido{
+    flex-direction: row-reverse;
+}
+.espaco-item img{
+    width: 45%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.espaco-info{
+    flex: 1;
+}
+.espaco-info h3{
+    font-family: 'Varela Round' , sans-serif;
+    font-size: 1.6rem;
+    color: var(--laranja);
+}
+.espaco-item.invertido .espaco-info h3{
+    color: var(--verde);
+}
+.espaco-info p{
+    margin-top: 12px;
+    color: #555;
+    line-height: 1.6;
 }
