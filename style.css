@@ -201,7 +201,7 @@ main{
     50%{ transform: translateY(-40px); }
 }
 .sobre-texto p + p{
-    margin-top: 12px;
+    margin-top: 15px;
 }
 .diferenciais{
     list-style: none;
@@ -401,4 +401,185 @@ main{
     margin-top: 12px;
     color: #555;
     line-height: 1.6;
+}
+.contato{
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.contato h2{
+    font-size: 2rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--laranja);
+}
+.contato-intro{
+    margin-top: 12px;
+    color: #555;
+}
+.contato-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 40px;
+    align-items: start;
+    text-align: left;
+}
+.contato-info,
+.contato-form{
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+.contato-info{
+    border-top: 5px solid var(--verde);
+}
+.contato-form{
+    border-top: 5px solid var(--laranja);
+}
+.contato-info h3,
+.contato-form h3{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.4rem;
+    color: var(--preto);
+    margin-bottom: 16px;
+}
+.contato-info ul{
+    list-style: none;
+}
+.contato-info li{
+    padding: 10px 0;
+    color: #555;
+    border-bottom: 1px dashed #e0d8c8;
+}
+.contato-info li span{
+    display: block;
+    font-size: 0.85rem;
+    color: var(--laranja);
+}
+.contato-info .btn-cta{
+    width: 100%;
+    text-align: center;
+}
+.campo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+.campos-duplos{
+    display: grid;
+    grid: 1fr 1fr;
+    gap: 16px;
+}
+.campo label{
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 6px;
+}
+.campo input,
+.campo select{
+    padding: 12px 14px;
+    border: 1px solid #e0d8c8;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fff;
+}
+.campo input:focus,
+.campo select:focus{
+    outline: 2px solid var(--laranja);
+    border-color: var(--laranja);
+}
+.aviso-data{
+    min-height: 22px;
+    margin: -8px 0 12px;
+    font-size: 0.9rem;
+}
+.aviso-data.livre{
+    color: #3B6D11;
+}
+.aviso-data.ocupoda{
+    color: #A32D2D;
+}
+.contaot-form .btn-cta{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: 'Varela Round', sans-serif;
+}
+.atalhos{
+    text-align: center;
+    padding: 60px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.atalhos h2{
+    font-size: 2rem;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--laranja);
+}
+.atalhos-intro{
+    margin-top: 12px;
+    color: #555;
+}
+.atalhos-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+.atalho{
+    display: block;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: left;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-top: 5px solid var(--laranja);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.atalho:nth-child(even){
+    border-top-color: var(--verde);
+}
+.atalho:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+.atalho img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+.atalho h3{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2rem;
+    color: var(--preto);
+    margin-top: 16px;
+    padding: 0 16px;
+}
+.atalho p{
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    padding: 8px 16px 20px;
+}
+.chamada{
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 56px 24px;
+    text-align: center;
+    background-color: #FFE3CC;
+    border-radius: 24px;
+}
+.chamada h2{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 2rem;
+    color: var(--preto);
+}
+.chamada p{
+    margin-top: 12px;
+    color: #555;
 }
