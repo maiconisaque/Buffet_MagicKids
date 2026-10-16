@@ -38,6 +38,12 @@
                 <img src="imagens/icons8-facebook-50.png" alt="Facebook">
             </a>
         </div>
+
+         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <main>
@@ -93,12 +99,107 @@
         <input type="text" name="tema" id="tema">
     </div>
 
+    <div class="campo">
+    <label>Data da festa</label>
+    <div id="calendario" class="calendario"></div>
+    <input type="text" id="data_festa" name="data_festa" placeholder="Escolha no calendário" readonly>
+</div>
+
+<div class="campo">
+    <label for="horario">Horário</label>
+    <select id="horario" name="horario" required>
+        <option value="">Selecione</option>
+        <option>13h às 17h</option>
+        <option>17h às 21h</option>
+    </select>
+</div>
+
     <button type="submit" class="btn-cta" id="btn-enviar">Pedir orçamento</button>
     <p id="status-form"></p>
 </form>
             </div>
         </section>
     </main>
+
+     <footer class="rodape">
+        <div class="rodape-grid">
+            <div class="rodape-marca">
+                <img src="imagens/magics kids.png" alt="Magic Kids">
+                <p>O buffet infantil onde a festa dos seus filhos ganha vida.</p>
+            </div>
+
+            <div class="rodape-col">
+                <h3>Contato</h3>
+                <ul>
+                    <li>(55) 11 3431-5190</li>
+                    <li>Av. Raimundo Pereira de Magalhães, 11522, São Paulo</li>
+                    <li>Seg a Dom, 9h às 18h</li>
+                </ul>
+            </div>
+
+            <div class="rodape-col">
+                <h3>Navegue</h3>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a href="espaco.html">Espaço</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="rodape-col">
+                <h3>Redes sociais</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/buffet_magickids/" target="_blank">Instagram"></a></li>
+                    <li><a href="https://www.facebook.com/buffetmagickids" target="_blank">Facebook"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="rodape-copy">© 2026 Magic Kids. Todos os direitos reservados.</p>
+    </footer>
+    <aside id="adm-raiz" hidden>
+    <div class="adm-topo">
+        <h2>Painel Magic Kids</h2>
+        <button type="button" class="sec" id="adm-fechar">Fechar</button>
+    </div>
+ 
+    <!-- Tela de login -->
+    <form id="adm-login">
+        <label>E-mail
+            <input type="email" id="adm-email" required autocomplete="username">
+        </label>
+        <label>Senha
+            <input type="password" id="adm-senha" required autocomplete="current-password">
+        </label>
+        <button type="submit">Entrar</button>
+        <p id="adm-erro" class="adm-erro"></p>
+    </form>
+ 
+    <!-- Painel (aparece depois do login) -->
+    <div id="adm-painel" hidden>
+        <p class="adm-dica">Edite os textos e salve. As mudanças aparecem para todos os visitantes.</p>
+ 
+        <div id="adm-campos"></div>
+        <button type="button" id="adm-salvar">Salvar textos</button>
+ 
+        <hr>
+ 
+        <h3>Datas já reservadas</h3>
+        <p class="adm-dica">Aparecem bloqueadas no calendário. Salva automaticamente.</p>
+        <div class="adm-linha">
+            <input type="date" id="adm-nova-data">
+            <button type="button" id="adm-add">Bloquear</button>
+        </div>
+        <ul id="adm-datas"></ul>
+ 
+        <hr>
+ 
+        <button type="button" class="sec" id="adm-sair">Sair da conta</button>
+        <p id="adm-aviso" role="status"></p>
+    </div>
+</aside>
     <script src="script.js"></script>
 </body>
 </html>
