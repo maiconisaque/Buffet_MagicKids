@@ -335,3 +335,25 @@ if (botao && menu) {
     if (location.hash === "#admin") abrirAdmin();
     window.addEventListener("hashchange", () => { if (location.hash === "#admin") abrirAdmin(); });
 })().catch((e) => console.error("Painel admin:", e));
+
+const lightbox = document.getElementById('lightbox');
+
+if (lightbox) {
+    const fotoGrande = lightbox.querySelector('img');
+    const legenda = lightbox.querySelector('.lightbox-legenda');
+
+    document.querySelectorAll('.galeria-card img').forEach(function (foto) {
+        foto.addEventListener('click', function () {
+            fotoGrande.src = foto.src;
+            fotoGrande.alt = foto.alt;
+            legenda.textContent = foto.parentElement.querySelector('h3').textContent;
+            lightbox.showModal();
+        });
+    });
+
+    lightbox.addEventListener('click', function (evento) {
+        if (evento.target === lightbox || evento.target.classList.contains('lightbox-fechar')) {
+            lightbox.close();
+        }
+    });
+}
